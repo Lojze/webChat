@@ -9,5 +9,10 @@
     "navigationBarTitleText": "按时喝水",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-popup": "@vant/weapp/popup",
+    "van-datetime-picker": "@vant/weapp/datetime-picker"
+  }
 }

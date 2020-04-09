@@ -1,0 +1,22 @@
+{
+  "name": "webchat",
+  "version": "1.0.0",
+  "description": "*   git config user.name 你的目标用户名",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lojze/webChat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lojze/webChat/issues"
+  },
+  "homepage": "https://github.com/Lojze/webChat#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.1.0"
+  }
+}

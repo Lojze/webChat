@@ -1,1 +1,33 @@
 /* pages/myMap/index.wxss */
+.main {
+    position: relative;
+}
+.init-img {
+    width: 100%;
+    display: block;
+}
+.text ,.logged ,.title , .title2 {
+    position: absolute;
+    left: 55rpx;
+    bottom: 0;
+    color: #fff;
+}
+.text  {
+    bottom: 382rpx;
+    font-size: 82rpx;
+    font-weight: bold;
+}
+.logged {
+    bottom: 240rpx;
+    font-size: 120rpx;
+    font-weight: bold;
+}
+.title {
+    bottom: 150rpx;
+    font-size: 60rpx;
+}
+.title2 {
+    bottom: 60rpx;
+    font-size: 60rpx;
+}
+

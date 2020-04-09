@@ -1,4 +1,8 @@
-<view>
-    
+<view class="main">
+    <image class="init-img" style="height: {{imageheight}}px;" src="{{imagefirstsrc}}"></image>
+    <text class="text">Water</text>
+    <text class="logged">Logged</text>
+    <text class="title">lets keep you hydrated</text>
+    <text class="title2">请保持水分</text>
 </view>
   
