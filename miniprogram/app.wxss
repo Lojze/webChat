@@ -1,156 +1,165 @@
-/**app.wxss**/
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-} 
-
-button {
-  background: initial;
-}
-
-button:focus{
-  outline: 0;
-}
-
-button::after{
-  border: none;
-}
-
-
 page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  -webkit-text-size-adjust: 100% !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow-x: hidden;
+  height: 100%;
 }
 
-.userinfo, .uploader, .tunnel {
-  margin-top: 40rpx;
-  height: 140rpx;
+input {
+  outline: none;
+  font-size: 100%;
+  -webkit-appearance: none;
+}
+
+page,
+view,
+ul,
+li,
+input,
+p,
+th,
+td,
+button,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
   width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: none;
-  border-right: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: all 300ms ease;
 }
 
-.userinfo-avatar {
-  width: 100rpx;
-  height: 100rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  background-size: cover;
-  background-color: white;
+ul,
+li,
+p {
+  display: block;
 }
 
-.userinfo-avatar:after {
-  border: none;
+table {
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.userinfo-nickname {
-  font-size: 32rpx;
-  color: #007aff;
-  background-color: white;
-  background-size: cover;
+th {
+  text-align: inherit;
+  display: table-cell;
 }
 
-.userinfo-nickname::after {
-  border: none;
+thead {
+  display: table-header-group;
 }
 
-.uploader, .tunnel {
-  height: auto;
-  padding: 0 0 0 40rpx;
-  flex-direction: column;
-  align-items: flex-start;
-  box-sizing: border-box;
+tbody {
+  display: table-row-group;
 }
 
-.uploader-text, .tunnel-text {
-  width: 100%;
-  line-height: 52px;
-  font-size: 34rpx;
-  color: #007aff;
+tr {
+  display: table-row;
 }
 
-.uploader-container {
-  width: 100%;
-  height: 400rpx;
-  padding: 20rpx 20rpx 20rpx 0;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+td {
+  display: table-cell;
 }
 
-.uploader-image {
-  width: 100%;
-  height: 360rpx;
+em,
+th,
+i {
+  font-style: normal;
+  font-weight: 500;
 }
 
-.tunnel {
-  padding: 0 0 0 40rpx;
+ol,
+ul {
+  list-style: none;
 }
 
-.tunnel-text {
+.fn-clear:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.none {
+  display: none;
+}
+
+.clear-both {
+  clear: both;
+}
+
+/*  */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+
+/* iphoneX底部 */
+.iphone-placeholder {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/*元素隐藏显示*/
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+/* 去除button默认样式 */
+button:after {
+  border: 0rpx;
+}
+/* 去除button样式 */
+button {
   position: relative;
-  color: #222;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: '';
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: none;
+  border: 0rpx;
+  font-size: 26rpx;
+  text-align: center;
+  text-decoration: none;
+  line-height: 34rpx;
+  border-radius: 0;
+  /*  border-radius: 5rpx; */
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  color: #666666;
+  background-color: transparent;
 }
 
-.tunnel-text:first-child {
-  border-top: none;
+/*不换行加...*/
+
+.t-ellipsis,
+.t-ellipsis-2,
+.t-ellipsis-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.tunnel-switch {
-  position: absolute;
-  right: 20rpx;
-  top: -2rpx;
+.t-ellipsis {
+  white-space: nowrap;
 }
 
-.disable {
-  color: #888;
+.t-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
-.service {
-  position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
-  width: 140rpx;
-  height: 140rpx;
-  border-radius: 50%;
-  background: linear-gradient(#007aff, #0063ce);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.service-button {
-  position: absolute;
-  top: 40rpx;
-}
-
-.service:active {
-  box-shadow: none;
-}
-
-.request-text {
-  padding: 20rpx 0;
-  font-size: 24rpx;
-  line-height: 36rpx;
-  word-break: break-all;
+.t-ellipsis-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

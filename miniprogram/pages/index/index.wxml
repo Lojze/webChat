@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+<open-data type="userNickName"></open-data>
+  用户登录
+  <view class="" bindtap = "goDemo"> 
+        demo
+  </view>
+</view>
