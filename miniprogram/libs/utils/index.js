@@ -1,36 +1,24 @@
-module.exports = {
+// 工具函数
 
-    // 判断session_key是否过期
-    checkSession() {
-        return wx.checkSession((res) => {
-            return true
-            // return {
-            //     isExpired: false,
-            //     errMsg: 'session_key 未过期，并且在本生命周期一直有效'
-            // }
-        }).catch(err => {
-            return false
-            // return {
-            //     isExpired: true,
-            //     errMsg: 'session_key 已经失效，需要重新执行登录流程'
-            // }
+
+//存储
+const storage = {
+    set: function (key, data) {
+        wx.setStorage({
+            key: key,
+            data: data,
         })
+        // wx.setStorageSync(key, data)
     },
-
-    getWxLoginCode(){
-        return new Promise((resolve, reject) => {
-            wx.login({
-                success(res) {
-                    if (res.errMsg === 'login:ok') {
-                        resolve(res.code)
-                    } else {
-                        reject(false)
-                        //console.log(res.errMsg)
-                    }
-                }
-            })
-        })
+    get: function (key, data) {
+        return wx.getStorageSync(key)
+    },
+    clear: function (key, data) {
+        wx.setStorageSync(key, false)
     }
+}
+module.exports = {
+    storage
 }
 
 

@@ -1,8 +1,12 @@
 <!--index.wxml-->
 <view class="container">
 <open-data type="userNickName"></open-data>
-  用户登录
+  用户登录 {{openid}}
   <view class="" bindtap = "goDemo"> 
         demo
+  </view>
+
+  <view bindtap = "getUserProfile">
+        getUserProfile
   </view>
 </view>

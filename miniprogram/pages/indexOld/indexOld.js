@@ -14,6 +14,7 @@ Page({
   },
 
   onLoad: function() {
+    console.log(this)
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
