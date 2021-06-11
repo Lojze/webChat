@@ -25,7 +25,7 @@ Page({
     //     console.log(res)
     //   }
     // })
-    const signedData = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJ4amxzajMzbGFzZmFmIiwiZGF0YSI6ImV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5leUp4SWpvaTVvR3Q1WmFjNWJDUDVieWc2SVN4NVkyVjVvaVE1WXFmSWl3aWJXOWtaU0k2SWpOamJHRnpjeUlzSW1wMGFTSTZJbU14WlRkbFpUSXpMVE16T0dNdE5HVXdPQzFoTlRsbExUQTJZbVExTW1RNU5UZGhNaUlzSW1saGRDSTZNVFl5TXpNeE5qRXpPQ3dpWlhod0lqb3hOakl6TXpFNU56TTRmUS5wTHF1QnUzMFFPcksxaTlxMmJEZTlLeVlmMG1CTk1ucHFLYnZNUGQ3U0UwIiwianRpIjoiYjA4MDRkMGEtODZlMy00ZTQ2LWI5M2EtNzQzYjYyY2NmNzRkIiwiaWF0IjoxNjIzMzE2MjE3LCJleHAiOjE2MjMzMTk4MTd9.tywfnMEs1NQC_SqGyRwt2mBBpvDkW0ipW4jglzeCXTE"
+    const signedData = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJ4amxzajMzbGFzZmFmIiwiZGF0YSI6eyJxIjoi5oGt5Zac5bCP5byg6ISx5Y2V5oiQ5YqfIiwibW9kZSI6IjNjbGFzcyJ9LCJqdGkiOiI5ZmEzY2UxMy01OWNiLTRiNzYtYTk0Ni05NjNlYTk3NmU4ZjkiLCJpYXQiOjE2MjMzNzg5MzgsImV4cCI6MTYyMzM4MjUzOH0.pRqHr--1NAWza70UeLiwmPfp5CQORbcQ15nLG0l_r_k"
     wx.request({
         url: 'https://openai.weixin.qq.com/openapi/nlp/sentiment/iBz7X8ekG5JeyP8oA63LfNt5Z2voGf',
         data: signedData,
