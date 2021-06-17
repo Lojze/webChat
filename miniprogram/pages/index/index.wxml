@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-<open-data type="userNickName"></open-data>
+<!-- <open-data type="userNickName"></open-data>
   用户登录 {{openid}}
   <view class="" bindtap = "goDemo"> 
         demo
@@ -8,5 +8,18 @@
 
   <view bindtap = "getUserProfile">
         getUserProfile
-  </view>
+  </view> -->
+      <view class="question_list">
+            <view class="">
+                  难以程度：{{question_list.hard_level}}
+            </view>
+            <view class="question">
+                  {{question_list.question}}
+            </view>
+            <view class="list" wx:for="{{question_list.answer_options}}" wx:for-item="item" wx:key="index">
+                  <view class="item" data-id="{{question_list.question_id}}" data-index="{{index}}" bindtap="answerFn" >
+                        {{item}}
+                  </view>
+            </view>
+      </view>
 </view>

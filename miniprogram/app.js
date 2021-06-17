@@ -1,7 +1,7 @@
 //app.js
 
 // import storage './libs/utils/index'
-
+var plugin = requirePlugin("chatbot");
 App({
   
   onLaunch: async function () {
@@ -16,6 +16,14 @@ App({
     }
 
     this.globalData = {}
+
+    await this.getCloudOpenid()
+    plugin.init({
+      appid: "PzDGl2IbGlwCebEN0N4NgPXLf3sg2o", //小程序示例账户，仅供学习和参考
+      openid: this.openid, //用户的openid，非必填，建议传递该参数
+      success: () => {}, //非必填
+      fail: (error) => {}, //非必填
+    });
   },
   //如果担心openid的安全，就用这个函数
   getCloudOpenid: async function () {

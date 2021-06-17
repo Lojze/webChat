@@ -1,13 +1,14 @@
 //index.js
 const app = getApp()
-
+var plugin = requirePlugin("chatbot");
 Page({
   data: {
-    openid:''
+    openid:'',
+    question_list:{}
   },
 
-  onLoad: function() {
-    // this.openid = await app.getOpenid()
+  onLoad: async function() {
+    this.openid = await app.getOpenid()
     // console.log(this.openid)
     // this.setData({
     //   openid: this.openid
@@ -16,30 +17,39 @@ Page({
   },
 
   getUserProfile() {
-
-    // console.log(this.openid, "openid")
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    // wx.getUserProfile({
-    //   desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-    //   success: (res) => {
-    //     console.log(res)
-    //   }
-    // })
-    const signedData = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJ4amxzajMzbGFzZmFmIiwiZGF0YSI6eyJxIjoi5oGt5Zac5bCP5byg6ISx5Y2V5oiQ5YqfIiwibW9kZSI6IjNjbGFzcyJ9LCJqdGkiOiI5ZmEzY2UxMy01OWNiLTRiNzYtYTk0Ni05NjNlYTk3NmU4ZjkiLCJpYXQiOjE2MjMzNzg5MzgsImV4cCI6MTYyMzM4MjUzOH0.pRqHr--1NAWza70UeLiwmPfp5CQORbcQ15nLG0l_r_k"
-    wx.request({
-        url: 'https://openai.weixin.qq.com/openapi/nlp/sentiment/iBz7X8ekG5JeyP8oA63LfNt5Z2voGf',
-        data: signedData,
-        method: 'POST',
-        responseType: 'text',
-        success(result) {
-
-        }
+    plugin.api.nlp('poem_fetch_question', {
+      question_count: 1,
+      userid: this.openid
+    }).then(res => {
+      if (res.status == 0) {
+        let list = res.question_list[0];
+        list.hard_level = this.getLevelFn(list.hard_level)
+        this.setData({
+          question_list: list
+        })
+      }
     })
   },
-  goDemo(){
-    wx.navigateTo({
-      url: '/pages/indexOld/indexOld'
+  answerFn(e){
+    let {id,index } = e.currentTarget.dataset;
+    plugin.api.nlp('poem_check_answer', {
+      question_id: id,
+      user_answer_content: index
+    }).then(res => {
+      console.log("poem_check_answer result : ", res.check_result)
     })
+  },
+  getLevelFn(val){
+    if (val == 'easy') {
+      return '简单'
+    }
+    if (val == 'easy') {
+      return '中等'
+    }
+
+    if (val == 'hard') {
+      return '困难'
+    }
   }
 
 })

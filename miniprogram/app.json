@@ -22,6 +22,15 @@
     "navigationBarTitleText": "测试",
     "navigationBarTextStyle": "black"
   },
+  "plugins": {
+    "chatbot": {
+      "version": "1.2.8",
+      "provider": "wx8c631f7e9f2465e1"
+    }
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }
